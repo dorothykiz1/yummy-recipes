@@ -1,6 +1,7 @@
 from datetime import datetime
 from myapp.models.recipe import Recipe
 
+
 class Category:
     def __init__(self, category_id, name, description):
         self.category_id = category_id

@@ -1,5 +1,10 @@
 from passlib.apps import custom_app_context as pwd_context
 from myapp.models.user import User
+"""
+a dashboard class that enables  the user to sign in
+and log out and register at once
+     they are on the app.
+"""
 
 
 class Dashboard:
