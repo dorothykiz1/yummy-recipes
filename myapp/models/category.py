@@ -1,4 +1,7 @@
-class category:
+from datetime import datetime
+from myapp.models.recipe import Recipe
+
+class Category:
     def __init__(self, category_id, name, description):
         self.category_id = category_id
         self.name = name
@@ -15,7 +18,7 @@ class category:
 
         recipe = Recipe(recipe_id, name, description, self.category_id)
         self.recipes[recipe.name] = recipe
-        self.recipe_ids_names[recipe.recipe.recipe_id] = recipe name
+        self.recipe_ids_names[recipe.recipe_id] = recipe.name
         return True
 
     def delete_recipe(self, recipe_id):

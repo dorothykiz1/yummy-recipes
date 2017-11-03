@@ -1,14 +1,14 @@
-from app.models.category import category
+from myapp.models.category import Category
 
 
-class user:
+class User:
     def __init__(self, name, email, password):
         self.name = name
         self.email = email
         self.password = password
 
-        self.categories = dict()
-        self.categories_ids_names = dict()
+        self.categories = dict() #name - categories
+        self.categories_ids_names = dict() #id name
 
     def add_category(self, name, description, category_id):
         name = name.title()

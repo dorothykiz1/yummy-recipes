@@ -1,15 +1,15 @@
-from passlib.apps import custom_app_content as pwd_context
-from app.models.user import User
+from passlib.apps import custom_app_context as pwd_context
+from myapp.models.user import User
 
 
 class Dashboard:
     def __init__(self):
-        self.registry = dict()
-        self.is_loggin_in = False
+        self.registry = dict()  # list registry
+        self.is_logged_in = False
 
-    def register(self, name, email, password):
-        has_been registered = False
-        user = user(name, email, password)
+    def signup(self, name, email, password):
+        has_been_registered = False
+        user = User(name, email, password)
         if user and user.email not in self.registry:
             self.registry[user.email] = user
             has_been_registered = True
@@ -18,14 +18,14 @@ class Dashboard:
     def login(self, email, password):
         if email not in self.registry:
             return False
-        if pad_context.verify(password, self.registry[email].password):
+        if pwd_context.verify(password, self.registry[email].password):
             self.is_logged_in = True
             return True
         return False
 
     def logout(self):
-        is logged_out = False
+        is_logged_out = False
         if self.is_logged_in:
 
-            is.logged_out = True
+            is_logged_out = True
         return is_logged_out
